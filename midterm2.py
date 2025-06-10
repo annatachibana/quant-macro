@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Growth Accounting for OECD Countries: 1990-2019
 Reproducing Table 5.1 from Aghion & Howitt (2009)
@@ -14,6 +16,12 @@ Where:
 - L: Labor (employment or hours worked)
 - A: Total Factor Productivity (TFP)
 - α: Capital share (typically around 0.3-0.4)
+
+Usage:
+    python GrowthAccounting.py
+
+Author: Growth Accounting Analysis
+Date: 2025
 """
 
 import pandas as pd
@@ -267,5 +275,13 @@ def main():
 
 
 if __name__ == "__main__":
-    # Run the analysis
-    results = main()
+    try:
+        # Run the analysis
+        results = main()
+        print("\n" + "="*60)
+        print("Growth Accounting Analysis completed successfully!")
+        print("="*60)
+    except Exception as e:
+        print(f"Error occurred during analysis: {str(e)}")
+        import traceback
+        traceback.print_exc()
